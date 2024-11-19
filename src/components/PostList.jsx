@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchPosts, addComment, upvotePost } from '../services/api';
 import Loading from '../pages/Loading';
+import '../styles/PostList.css';
 
 const VALID_TAGS = [
     'Adventure', 'Trail Review', 'Scenic View', 'Trail Tips', 
@@ -118,7 +119,7 @@ const PostList = () => {
   return (
     <div>
       <h1>Posts</h1>
-      <div>
+      <div className='sort'>
         <label>
           Sort by:
           <select value={sortOption} onChange={handleSortChange}>
@@ -148,6 +149,7 @@ const PostList = () => {
           />
         </label>
       </div>
+      <div className='post-list'>
       {filteredPosts.length === 0 ? (
         <p>No posts available.</p>
       ) : (
@@ -157,7 +159,7 @@ const PostList = () => {
               <Link to={`/detail/${post._id}`}>{post.title}</Link>
             </h2>
             <p>{post.userId} Created At: {new Date(post.createdAt).toLocaleString()}</p>
-            <p>{post.content}</p>
+            <p className='content'>{post.content}</p>
             <p>Tags: {post.tags.join(', ')}</p>
             <p>Upvotes: {post.upvotes}</p>
             <button onClick={() => handleUpvote(post._id)}>
@@ -167,14 +169,12 @@ const PostList = () => {
               <img
                 src={`https://trailtalk-backend-production.up.railway.app${post.localImagePath}`}
                 alt={post.title}
-                style={{ width: '100px', height: 'auto' }}
               />
             )}
             {!post.localImagePath && post.imageUrl && (
               <img
                 src={post.imageUrl}
                 alt={post.title}
-                style={{ width: '100px', height: 'auto' }}
               />
             )}
            <div>
@@ -207,6 +207,8 @@ const PostList = () => {
           </div>
         ))
       )}
+      </div>
+     
     </div>
   );
 };

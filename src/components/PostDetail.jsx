@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchPost, deletePost, addComment, upvotePost } from '../services/api';
 import Loading from '../pages/Loading';
+import '../styles/PostDetail.css';
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -89,7 +90,17 @@ const PostDetail = () => {
   if (error) return <p>Error loading post: {error}</p>;
 
   return (
-    <div>
+    <div className='post-detail'>
+      <div className="action-buttons">
+        <button onClick={() => navigate(`/edit/${id}`)}>Edit Post</button>
+        <button onClick={handleDelete}>Delete Post</button>
+        <input
+          type="password"
+          placeholder="Enter secret key to delete"
+          value={secretKey}
+          onChange={(e) => setSecretKey(e.target.value)}
+        />
+      </div>
       <h1>{post.title}</h1>
       <p>{post.content}</p>
       <p>Created At: {new Date(post.createdAt).toLocaleString()}</p>
@@ -111,16 +122,6 @@ const PostDetail = () => {
           style={{ width: '300px', height: 'auto' }}
         />
       )}
-      <button onClick={() => navigate(`/edit/${id}`)}>Edit Post</button>
-      <div>
-        <input
-          type="password"
-          placeholder="Enter secret key to delete"
-          value={secretKey}
-          onChange={(e) => setSecretKey(e.target.value)}
-        />
-        <button onClick={handleDelete}>Delete Post</button>
-      </div>
       <div>
         <h3>Comments:</h3>
         {post.comments.length === 0 ? (

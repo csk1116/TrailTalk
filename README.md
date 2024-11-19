@@ -2,7 +2,11 @@
 
 Submitted by: **Eric (Chia-Sheng) Kuo**
 
-This web app: **insert description**
+This web app: **TrailTalk** is a platform for outdoor enthusiasts to share their trail experiences, tips, and adventures. Users can create posts with titles, content, and images, and interact with other users' posts by upvoting and commenting. The app provides features for sorting, filtering, and searching posts to enhance user experience.
+
+## Backend
+
+This project uses the [`trailtalk-backend`](https://github.com/csk1116/TrailTalk-backend), which is built with Node.js, Express.js, and MongoDB. The backend handles user authentication, post creation, upvoting, and commenting. It provides a RESTful API that the frontend interacts with to perform CRUD operations and other actions.
 
 Time spent: **12** hours spent in total
 
@@ -33,30 +37,22 @@ The following **optional** features are implemented:
 - [x] Users can upload images directly from their local machine as an image file
 - [x] Display a loading animation whenever data is being fetched
 
-The following **additional** features are implemented:
-
-* [ ] List anything else that you added to improve the site's functionality!
-
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+<img src='https://i.imgur.com/ffGfchl.gif' title='Video Walkthrough' width='600' alt='Video Walkthrough' />
+
+GIF created with ...  [Kap](https://getkap.co/) for macOS
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+-
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2024] [Eric (Chia-Sheng) Kuo]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

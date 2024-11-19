@@ -1,0 +1,78 @@
+/* PostList.css */
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.post-summary {
+  background-color: #3e4e3e; /* Slightly lighter dark green */
+  color: #d4e157; /* Light green text */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 500px;
+  margin: 10px;
+  transition: transform 0.3s;
+}
+
+.post-summary:hover {
+  transform: translateY(-5px);
+}
+
+.post-summary h2 {
+  color: #d4e157; /* Light green */
+}
+
+.post-summary p {
+  color: #cdd48e; /* Light green */
+}
+
+.post-summary img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.post-summary button {
+  background-color: #4caf50; /* Green button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.post-summary button:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+.post-summary a {
+    color: #2e7d32; /* Dark green */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.post-summary a:hover {
+    color: #1b5e20; /* Darker green on hover */
+}
+
+.sort {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.post-summary .content {
+    background-color: #cdd48e;
+    color: #080808; /* Dark green text */
+    border-radius: 20px;
+    height: 150px;
+    padding: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

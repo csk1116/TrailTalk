@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/Home.css';
 
 const Home = () => {
   const [userId, setUserId] = useState('');
@@ -26,12 +27,12 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className='container'>
       <h1>Welcome to TrailTalk</h1>
       {userId ? (
         <div>
           <p>Hello, {userId}</p>
-          <nav>
+          {/* <nav>
             <ul>
               <li>
                 <Link to="/posts">View Posts</Link>
@@ -40,7 +41,7 @@ const Home = () => {
                 <Link to="/create">Create a Post</Link>
               </li>
             </ul>
-          </nav>
+          </nav> */}
           <button onClick={handleChangeUser}>Change User</button>
           {isChangingUser && (
             <form onSubmit={handleUserIdSubmit}>
